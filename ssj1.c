@@ -1,17 +1,29 @@
-#include <stdio.h>
-#include <ctype.h>
-void uptolow(char low)
-{
-  char lower;
-  lower = tolower(low);
-  printf("The lower case char is :");
-  printf("%c",lower);
-}
+#include<stdio.h>
 
 int main()
 {
-  char upper;
-  printf("Enter the upper case char:");
-  scanf("%c", &upper);
-  uptolow(upper);
+	int originalnum;
+	int num;
+	int result=0;
+	int remainder =0;
+   printf("Enter the number\n");
+   scanf("%d",&num);
+   
+	originalnum = num;
+   while (originalnum >0)
+	{
+	        remainder = originalnum %10;
+ 	        result = result+(remainder*remainder*remainder); 
+        	originalnum /=10;
+//	printf("the result %d\n",result);
+        }
+//printf("the result %d",result);
+if(result==num)
+   printf("The number is Amstrong number\n");
+
+else
+   printf("The number is not an Amstrong number\n");
+
+return 0;
 }
+
